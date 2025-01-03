@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Post and Engagement</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Body Styling */
+        body {
+            background: linear-gradient(45deg, #45179f, #1dfd55, #f3a63a);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+            padding: 20px;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Facebook Section Styling */
+        .facebook-section {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 350px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .facebook-section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Icons */
+        .icon {
+            margin-right: 8px;
+            color: #1877f2;
+            font-size: 1.1em;
+        }
+
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 1em;
+        }
+
+        .username {
+            font-weight: bold;
+            color: #1877f2;
+            display: flex;
+            align-items: center;
+        }
+
+        .timestamp {
+            color: #8e8e8e;
+            font-size: 0.85em;
+        }
+
+        /* Post Details */
+        .post-details {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+            color: #8e8e8e;
+            margin-top: 15px;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .detail-item i {
+            color: #1877f2;
+            margin-right: 5px;
+        }
+
+        .post-content p {
+            font-size: 1em;
+            color: #333;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        /* Reactions */
+        .reactions {
+            color: #8e8e8e;
+            font-size: 0.9em;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+
+        .reactions-count {
+            font-weight: bold;
+            color: #1877f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Bichart Section */
+        .bichart-container {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 400px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .bichart-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .bichart-container h2 {
+            font-size: 1.2em;
+            color: #333;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .bichart {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            height: 220px;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        .bar {
+            background-color: #1877f2;
+            color: #ffffff;
+            text-align: center;
+            padding: 5px 0;
+            width: 30%;
+            border-radius: 8px 8px 0 0;
+            font-size: 0.9em;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            position: relative;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .bar:hover {
+            background-color: #145dbf;
+            transform: translateY(-5px);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .bar::after {
+            content: attr(data-value);
+            position: absolute;
+            top: -30px;
+            font-size: 0.85em;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Footer Styling */
+        .footer {
+            margin-top: 20px;
+            color: #777;
+            font-size: 0.85em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+     
+    <!-- Facebook Section -->
+    <div class="facebook-section">
+        <div class="post">
+            <div class="post-header">
+                <span class="username"><i class="fas fa-user icon"></i>JohnDoe</span>
+                <span class="timestamp">10 minutes ago</span>
+            </div>
+            <div class="post-content">
+                <p>Check out this amazing photo I took during my trip! #Vacation #Memories</p>
+            </div>
+            <div class="post-details">
+                <div class="detail-item"><i class="fas fa-thumbs-up"></i>Likes: 250</div>
+                <div class="detail-item"><i class="fas fa-comment"></i>Comments: 80</div>
+                <div class="detail-item"><i class="fas fa-share"></i>Shares: 30</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bichart Section -->
+    <div class="bichart-container">
+        <h2>Facebook Engagement Bichart</h2>
+        <div class="bichart">
+            <div class="bar" style="height: 70%;" data-value="70%">Likes: 70%</div>
+            <div class="bar" style="height: 60%;" data-value="60%">Comments: 60%</div>
+            <div class="bar" style="height: 40%;" data-value="40%">Shares: 40%</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Social Media Analysis. All rights reserved.</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Post and Engagement</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Body Styling */
+        body {
+            background: linear-gradient(45deg, #3ab45f, #a71dfd, #fcb045);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+            padding: 20px;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Instagram Section Styling */
+        .instagram-section {
+            background-color: #ffffff;
+            background-image: url('https://www.transparenttextures.com/patterns/pinstriped-suit.png');
+            background-size: cover;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 350px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .instagram-section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Icons */
+        .icon {
+            margin-right: 8px;
+            color: #0095f6;
+            font-size: 1.1em;
+        }
+
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 1em;
+        }
+
+        .username {
+            font-weight: bold;
+            color: #385185;
+            display: flex;
+            align-items: center;
+        }
+
+        .timestamp {
+            color: #8e8e8e;
+            font-size: 0.85em;
+        }
+
+        /* Post Details */
+        .post-details {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+            color: #8e8e8e;
+            margin-top: 15px;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .detail-item i {
+            color: #0095f6;
+            margin-right: 5px;
+        }
+
+        .post-content p {
+            font-size: 1em;
+            color: #333;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        /* Comments */
+        .comments {
+            color: #8e8e8e;
+            font-size: 0.9em;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+
+        .comments-count {
+            font-weight: bold;
+            color: #0095f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Bichart Section */
+        .bichart-container {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 400px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .bichart-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .bichart-container h2 {
+            font-size: 1.2em;
+            color: #333;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .bichart {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            height: 220px;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        .bar {
+            background-color: #0095f6;
+            color: #ffffff;
+            text-align: center;
+            padding: 5px 0;
+            width: 30%;
+            border-radius: 8px 8px 0 0;
+            font-size: 0.9em;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            position: relative;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .bar:hover {
+            background-color: #007bb5;
+            transform: translateY(-5px);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .bar::after {
+            content: attr(data-value);
+            position: absolute;
+            top: -30px;
+            font-size: 0.85em;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Footer Styling */
+        .footer {
+            margin-top: 20px;
+            color: #777;
+            font-size: 0.85em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+     
+    <!-- Instagram Section -->
+    <div class="instagram-section">
+        <div class="post">
+            <div class="post-header">
+                <span class="username"><i class="fas fa-user icon"></i>User123</span>
+                <span class="timestamp">5 minutes ago</span>
+            </div>
+            <div class="post-content">
+                <p>This is a sample post. What do you think about this?</p>
+            </div>
+            <div class="post-details">
+                <div class="detail-item"><i class="fas fa-users"></i>Followers: 1.2K</div>
+                <div class="detail-item"><i class="fas fa-user-friends"></i>Following: 300</div>
+                <div class="detail-item"><i class="fas fa-heart"></i>Likes: 150</div>
+                <div class="detail-item"><i class="fas fa-comment"></i>Comments: 50</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bichart Section -->
+    <div class="bichart-container">
+        <h2>Instagram Engagement Bichart</h2>
+        <div class="bichart">
+            <div class="bar" style="height: 70%;" data-value="70%">Likes: 70%</div>
+            <div class="bar" style="height: 60%;" data-value="60%">Comments: 60%</div>
+            <div class="bar" style="height: 50%;" data-value="50%">Shares: 50%</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Social Media Analysis. All rights reserved.</p>
+    </div>
+
+</body>
+</html>

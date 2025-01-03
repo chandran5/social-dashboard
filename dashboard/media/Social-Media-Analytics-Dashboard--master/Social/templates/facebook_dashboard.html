@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block title %}Facebook Dashboard{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="dashboard-container mt-4">
+        <h2 class="text-center" style="color: #3b5998;">Facebook Dashboard</h2>
+        
+        {% if facebook_stats %}
+            <div class="user-info">
+                <h3>User Information</h3>
+                <p><strong>Username:</strong> {{ facebook_stats.username }}</p>
+                <p><strong>Followers:</strong> {{ facebook_stats.followers_count }}</p>
+                <p><strong>Friends:</strong> {{ facebook_stats.friends_count }}</p>
+            </div>
+
+            {% if facebook_stats.posts %}
+                <div class="recent-posts">
+                    <h3>Recent Posts</h3>
+                    <div style="max-height: 300px; overflow-y: auto;">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Message</th>
+                                    <th>Likes</th>
+                                    <th>Comments</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for post in facebook_stats.posts %}
+                                    <tr>
+                                        <td>{{ post.message }}</td>
+                                        <td>{{ post.likes_count }}</td>
+                                        <td>{{ post.comments_count }}</td>
+                                        <td>{{ post.created_time }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            {% else %}
+                <p>No recent posts available.</p>
+            {% endif %}
+
+            <div class="likes-vs-hashtags">
+                <h3>Likes vs Posts</h3>
+                <canvas id="likes-vs-posts-chart" width="400" height="200" aria-label="Bar chart showing Likes vs Posts" role="img"></canvas>
+            </div>
+        {% else %}
+            <p>No Facebook statistics available to display.</p>
+        {% endif %}
+    </div>
+
+    {% if facebook_stats and facebook_stats.likes_vs_posts %}
+        <script>
+            
+            
+            var ctx = document.getElementById('likes-vs-posts-chart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: postsData,
+                    datasets: [{
+                        label: 'Likes vs Posts',
+                        data: likesData,
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Posts'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Likes'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    {% endif %}
+{% endblock %}

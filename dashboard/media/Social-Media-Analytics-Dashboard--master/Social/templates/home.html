@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="options-container">
+   <center><h2>Social Media</h2></center>
+    <div class="options">
+        
+        <a href="{{ url_for('youtube_form') }}" class="dashboard-link youtube-link">
+            <img src="{{ url_for('static', filename='images/youtube-icon.png') }}" alt="YouTube" class="dashboard-icon">
+            <span>YouTube</span>
+        </a>
+        <a href="{{ url_for('instagram_form') }}" class="dashboard-link instagram-link">
+            <img src="{{ url_for('static', filename='images/instagram-icon.png') }}" alt="Instagram" class="dashboard-icon">
+            <span>Instagram</span>
+        </a>
+        <a href="{{ url_for('facebook_form') }}" class="dashboard-link facebook-link">
+            <img src="{{ url_for('static', filename='images/facebook-icon.jpg') }}" alt="Facebook" class="dashboard-icon">
+            <span>Facebook</span>
+        </a>
+    </div>
+</div>
+{% endblock %}

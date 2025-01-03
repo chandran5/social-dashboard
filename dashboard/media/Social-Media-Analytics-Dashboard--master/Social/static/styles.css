@@ -1,0 +1,263 @@
+/* General Reset & Body Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #f2f1f0, rgb(52, 225, 237));
+    background-image: url(https://www.wscubetech.com/blog/wp-content/uploads/2024/04/social-media-1024x683.webp);
+    color: #1a1818;
+}
+
+/* Header */
+.header {
+    /* Gradient with modern colors */
+    background: linear-gradient(45deg, #ff6a00, #ee0979); /* Trendy orange-pink gradient */
+    
+    /* Modern and clean text styling */
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px; /* Slightly increased padding for spacious look */
+    font-size: 2em; /* Larger font for impact */
+    font-weight: 600; /* Lighter font weight for a modern feel */
+    
+    /* Subtle text shadow for depth */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); 
+    
+    /* Smooth transition effects */
+    transition: all 0.3s ease-in-out;
+    
+    /* Add a 3D floating effect on hover */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    
+    /* Additional border radius for smooth, rounded corners */
+    border-radius: 15px;
+}
+
+/* Hover effect for interactivity */
+.header:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+
+/* Content Container */
+/* Content Container */
+/* Content Container */
+.content {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.2); /* Light transparent background */
+    backdrop-filter: blur(10px); /* Apply blur to background */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+}
+
+
+
+/* Options Container */
+.options {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Dashboard Link */
+.dashboard-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dashboard-link img.dashboard-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+/* Specific Social Media Styles */
+.youtube-link {
+    background-color: #e70b0b;
+}
+
+.youtube-link:hover {
+    background-color: #e60000;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 0, 0, 0.3);
+}
+
+.instagram-link {
+    background-image: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+}
+
+.instagram-link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(240, 98, 146, 0.3);
+}
+
+.facebook-link {
+    background-image: linear-gradient(45deg, #3b5998, #8b9dc3);
+}
+
+.facebook-link:hover {
+    background-color: #2d4373;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(59, 89, 152, 0.3);
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #161515;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #1c0202;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Button Styles */
+button {
+    padding: 10px 15px;
+    color: #db1f1f;
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #357ab8;
+}
+
+/* Form Container */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.form-title {
+    color: #333;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.form-label {
+    color: #4b0082;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #87ceeb;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+}
+
+.input-field:focus {
+    border-color: #4682b4;
+}
+
+.submit-btn {
+    background-color: #32cd32;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #228b22;
+}
+
+/* Instagram Section */
+.instagram-section {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.post {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content, .dashboard-container {
+        margin: 20px;
+        padding: 20px;
+    }
+    
+    .options {
+        flex-direction: column;
+    }
+    
+    .dashboard-link {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        padding: 20px;
+    }
+    
+    .options {
+        flex-direction: column;
+        align-items: center;
+    }
+}
